@@ -34,3 +34,7 @@ colorscheme solarized
 
 " Set font
 set guifont=Menlo\ Regular:h14
+
+" Ideas for the future
+" https://dev.to/allanmacgregor/vim-is-the-perfect-ide-e80
+" https://github.com/amacgregor/dot-files
