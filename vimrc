@@ -1,3 +1,6 @@
+" https://howchoo.com/g/m2u0nthkyti/vim-convert-tabs-to-spaces
+set tabstop=2 shiftwidth=2 expandtab
+
 " Vundle boiler plate
 set nocompatible 
 filetype off
@@ -29,6 +32,7 @@ augroup END
 
 " Set colorscheme
 syntax enable
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
