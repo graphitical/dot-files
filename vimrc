@@ -1,5 +1,8 @@
 " https://howchoo.com/g/m2u0nthkyti/vim-convert-tabs-to-spaces
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=4 shiftwidth=4 expandtab
+
+let g:ale_completion_enabled = 1
+
 
 " Vundle boiler plate
 set nocompatible 
@@ -15,12 +18,13 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'dense-analysis/ale'
 
 call vundle#end()
 filetype plugin indent on
 " End Vundle boiler plate
-
-
+let g:ale_linters = { 'cpp' : ['clangd'] , 'python' :['flake8']}
 " Set hybrid relative/absolute numbers
 " https://jeffkreeftmeijer.com/vim-number/
 set number relativenumber
@@ -33,12 +37,11 @@ augroup END
 
 " Set colorscheme
 syntax enable
-let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
 " Set font
-set guifont=Menlo\ Regular:h14
+" set guifont=Menlo\ Regular:h14
 
 " Set NerdTree Details
 map <C-n> :NERDTreeToggle<CR>
@@ -49,6 +52,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " directory to pwd
 " autocmd StdinReadPre * let s:std_in=1
 autocmd Vimenter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" Scripts
+" map <Enter> !run556
+nmap <Left> <C-W>h
+nmap <Right> <C-W>l
 " Ideas for the future
 " https://dev.to/allanmacgregor/vim-is-the-perfect-ide-e80
 " https://github.com/amacgregor/dot-files
