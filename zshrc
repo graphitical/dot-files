@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=/usr/bin/lldb:$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/vcpkg:$PATH
+export PATH=/anaconda3/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/danielrevier/.oh-my-zsh"
 
@@ -69,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,3 +115,9 @@ SPACESHIP_CHAR_COLOR_SUCCESS="yellow"
 SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
 SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
 SPACESHIP_USER_SHOW="true"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+autoload bashcompinit
+bashcompinit
+
+source /Users/danielrevier/Downloads/vcpkg-master/scripts/vcpkg_completion.bash

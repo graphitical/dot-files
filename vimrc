@@ -20,11 +20,17 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'dense-analysis/ale'
+Plugin 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 filetype plugin indent on
 " End Vundle boiler plate
+
+" Ale stuff
 let g:ale_linters = { 'cpp' : ['clangd'] , 'python' :['flake8']}
+
+" === Cursor Stuff ===
 " Set hybrid relative/absolute numbers
 " https://jeffkreeftmeijer.com/vim-number/
 set number relativenumber
@@ -33,7 +39,8 @@ augroup numbertoggle
 	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-
+" Set line highlight
+set cursorline
 
 " Set colorscheme
 syntax enable
@@ -41,7 +48,7 @@ set background=dark
 colorscheme solarized
 
 " Set font
-" set guifont=Menlo\ Regular:h14
+set guifont=Menlo\ Regular:h14
 
 " Set NerdTree Details
 map <C-n> :NERDTreeToggle<CR>
