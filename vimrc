@@ -22,6 +22,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'dense-analysis/ale'
 Plugin 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'tpope/vim-commentary'
+Plugin 'sirtaj/vim-openscad'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,6 +30,9 @@ filetype plugin indent on
 
 " Ale stuff
 let g:ale_linters = { 'cpp' : ['clangd'] , 'python' :['flake8']}
+
+" Commentary stuff
+autocmd FileType c,cpp,cs,java,scad setlocal commentstring=//\ %s
 
 " === Cursor Stuff ===
 " Set hybrid relative/absolute numbers
